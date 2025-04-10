@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Water Quality Index Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>WATER QUALITY INDEX CALCULATOR</h2>
+
+    <div class="form-left">
+      <div class="form-row"><label>Station</label><input id="station" /></div>
+      <div class="form-row"><label>Sub-Station</label><input id="substation" /></div>
+      <div class="form-row"><label>Latitude</label><input id="latitude" type="number" step="any" /></div>
+      <div class="form-row"><label>Longitude</label><input id="longitude" type="number" step="any" /></div>
+    </div>
+
+    <div class="form-right">
+      <div class="form-row"><label>pH</label><input id="ph" type="number" /></div>
+      <div class="form-row"><label>TDS</label><input id="tds" type="number" /></div>
+      <div class="form-row"><label>TSS</label><input id="tss" type="number" /></div>
+      <div class="form-row"><label>BOD</label><input id="bod" type="number" /></div>
+      <div class="form-row"><label>Fluoride</label><input id="fluoride" type="number" /></div>
+      <div class="form-row"><label>Nitrate</label><input id="nitrate" type="number" /></div>
+      <div class="form-row"><label>Chloride</label><input id="chloride" type="number" /></div>
+      <div class="form-row"><label>Total Alkalinity</label><input id="alkalinity" type="number" /></div>
+      <div class="form-row"><label>Total Hardness</label><input id="hardness" type="number" /></div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="form-row output-box">
+      <label>WQI</label>
+      <input id="wqi" readonly />
+      <label style="margin-left: 30px;">Status</label>
+      <input id="status" readonly />
+    </div>
+
+    <div class="buttons">
+      <button onclick="calculateWQI()">Calculate</button>
+      <button onclick="exportPDF()">Export to PDF</button>
+      <button onclick="updateMap()">Show Location</button>
+    </div>
+
+    <h3 style="text-align: center; margin-top: 20px;">SAMPLE LOCATION</h3>
+    <div id="map"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
